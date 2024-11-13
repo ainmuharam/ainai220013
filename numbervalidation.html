@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Validation</title> <!-- Title added here -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        #container {
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Number Validation</h1> 
+        <input type="text" id="userInput" placeholder="Enter a number">
+        <button onclick="checkInput()">Check</button>
+    </div>
+
+    <script>
+        function checkInput() {
+            const input = document.getElementById("userInput").value;
+            const number = parseFloat(input);
+
+            if (isNaN(number)) {
+                alert("Please insert a number!");
+            } else if (number < 10) {
+                alert("The number is lower than 10");
+            } else {
+                alert("The number is higher than 10");
+            }
+        }
+    </script>
+</body>
+</html>
